@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="css/style.css"></head><body>
+<div class="panel">
+  <div class="header">
+    <span id="layerName" data-i18n-title="titleSelectedLayer" title="Selected layer">No layer selected</span>
+    <span class="version-badge" title="Plugin version">v2.1</span>
+    <button id="langToggle" class="lang-btn" title="切换语言 / Switch Language">中文</button>
+    <button id="refresh" data-i18n="btnReadLayer" data-i18n-title="titleReadLayer" title="Read selected layer / markers">Read Layer</button>
+  </div>
+  <div class="section-label" data-i18n="secCopyPasteReset">COPY / PASTE / RESET</div>
+  <div class="buttons copy-row">
+    <button id="optionsToggle" class="options-toggle" data-i18n-title="titleChooseProps" title="Choose properties (drag across checkboxes to toggle)" aria-haspopup="true" aria-controls="optionsPanel" aria-expanded="false"><span class="toggle-chevron" aria-hidden="true">▾</span></button>
+    <button id="copy" class="primary" data-i18n="btnCopy">Copy</button>
+    <button id="paste" data-i18n="btnPaste">Paste</button>
+    <button id="reset" data-i18n="btnReset">Reset</button>
+  </div>
+  <div class="paste-mode-row" role="group" aria-label="Keyframe paste timing">
+    <span class="mode-label" data-i18n="lblPasteAt" data-i18n-title="titlePasteAt" title="Where keyframes start when pasting">Paste at:</span>
+    <div class="segmented" id="pasteModeGroup">
+      <button type="button" class="seg-btn active" data-paste-mode="comp" data-i18n="modeComp" data-i18n-title="titleModeComp" title="Original comp time (default)">Comp Start</button>
+      <button type="button" class="seg-btn" data-paste-mode="cti" data-i18n="modeCti" data-i18n-title="titleModeCti" title="Shift earliest keyframe to Current Time Indicator (playhead)">Playhead</button>
+      <button type="button" class="seg-btn" data-paste-mode="inPoint" data-i18n="modeInPoint" data-i18n-title="titleModeInPoint" title="Shift earliest keyframe to target layer In Point">Layer In</button>
+    </div>
+  </div>
+  <div id="optionsPanel" class="options-panel" role="dialog" aria-label="Properties" hidden>
+    <div class="options-head"><span data-i18n="hdrProperties">PROPERTIES</span><button id="selectAll" class="text-btn" data-i18n="btnAll">All</button><button id="selectNone" class="text-btn" data-i18n="btnNone">None</button></div>
+    <div class="options-grid" id="optionsGrid">
+      <label><input type="checkbox" data-option="anchorPoint" checked> <span data-i18n="optAnchorPoint">Anchor Point</span></label>
+      <label><input type="checkbox" data-option="position" checked> <span data-i18n="optPosition">Position</span></label>
+      <label><input type="checkbox" data-option="scale" checked> <span data-i18n="optScale">Scale</span></label>
+      <label><input type="checkbox" data-option="rotation" checked> <span data-i18n="optRotation">Rotation</span></label>
+      <label><input type="checkbox" data-option="orientation" checked> <span data-i18n="optOrientation">Orientation</span></label>
+      <label><input type="checkbox" data-option="xRotation" checked> <span data-i18n="optXRotation">X Rotation</span></label>
+      <label><input type="checkbox" data-option="yRotation" checked> <span data-i18n="optYRotation">Y Rotation</span></label>
+      <label><input type="checkbox" data-option="zRotation" checked> <span data-i18n="optZRotation">Z Rotation</span></label>
+      <label><input type="checkbox" data-option="opacity" checked> <span data-i18n="optOpacity">Opacity</span></label>
+    </div>
+    <div class="options-grid extras">
+      <label><input type="checkbox" data-option="threeD"> <span data-i18n="optThreeD">3D Layer</span></label>
+      <label><input type="checkbox" data-option="materialOptions"> <span data-i18n="optMaterial">3D Material</span></label>
+      <label><input type="checkbox" data-option="effects"> <span data-i18n="optEffects">Effects</span></label>
+      <label><input type="checkbox" data-option="layerStyles"> <span data-i18n="optLayerStyles">Layer Styles</span></label>
+      <label><input type="checkbox" data-option="masks"> <span data-i18n="optMasks">Masks</span></label>
+      <label><input type="checkbox" data-option="contents"> <span data-i18n="optContents">Shape Contents</span></label>
+      <label><input type="checkbox" data-option="markers"> <span data-i18n="optMarkers">Markers</span></label>
+      <label><input type="checkbox" data-option="switches"> <span data-i18n="optSwitches">Blend & Switches</span></label>
+    </div>
+    <div class="options-subhead" data-i18n="subhdrText">TEXT</div>
+    <div class="options-grid text-section">
+      <label><input type="checkbox" data-option="sourceText"> <span data-i18n="optSourceText">Source Text</span></label>
+      <label><input type="checkbox" data-option="textPath"> <span data-i18n="optTextPath">Path Options</span></label>
+      <label><input type="checkbox" data-option="textMore"> <span data-i18n="optTextMore">More Options</span></label>
+      <label><input type="checkbox" data-option="textAnimators"> <span data-i18n="optTextAnimators">Animators</span></label>
+    </div>
+    <div class="options-note" data-i18n="noteSwipe">Tip: Click & drag across checkboxes to batch check/uncheck.</div>
+  </div>
+  <div class="section-label" data-i18n="secMarkerAlign">MARKER ALIGN</div>
+  <div class="marker-bar"><button id="prev" data-i18n-title="titlePrevMarker" title="Previous marker">◀</button><div id="markerInfo" data-i18n-title="titleSelectedMarker" title="Selected marker">No marker</div><button id="next" data-i18n-title="titleNextMarker" title="Next marker">▶</button></div>
+  <div class="hint" id="markerDetail">Select a layer with markers</div>
+  <button id="align" class="full primary" data-i18n="btnAlign" data-i18n-title="titleAlign" title="Move the entire layer so its selected marker lands at the playhead">Align Marker to CTI</button>
+  <div class="footer"><div class="section-label" data-i18n="secLog">LOG</div><span class="footer-ver">v2.1.1</span><button id="clear" data-i18n="btnClear" data-i18n-title="titleClear" title="Clear log">Clear Log</button></div>
+  <div id="log" aria-live="polite"></div>
+</div><script src="js/main.js"></script></body></html>
