@@ -1,4 +1,4 @@
-# Copy Transform + Marker（After Effects 图层属性复制粘贴与标记对齐插件）
+# Copy Transform + Marker（After Effects 图层属性复制粘贴与标记对齐）
 
 一款专为 Adobe After Effects 打造的 CEP 扩展面板（`v2.1.1`），支持**精准勾选复制、粘贴与重置**图层属性（包括变换、3D 材质、效果、图层样式、蒙版、形状内容、图层标记、混合模式开关以及细分的文本属性），并内置图层标记快速导航与播放头对齐、三档关键帧时间偏移粘贴，以及一键**中英文双语切换**。
 
