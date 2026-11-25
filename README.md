@@ -4,7 +4,13 @@
 
 [English](#english-documentation)
 
----
+## 界面预览
+
+<p align="center">
+  <img src="Image/Image%2001.png" width="320" alt="主面板界面">
+  &nbsp;&nbsp;
+  <img src="Image/Image%2002.png" width="320" alt="属性选择面板">
+</p>
 
 ## 核心功能
 
